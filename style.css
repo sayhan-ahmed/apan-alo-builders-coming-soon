@@ -600,47 +600,92 @@ body {
     border-bottom: none !important;
   }
 
+  .leadership-section {
+    margin: 50px auto 30px;
+  }
+  .leadership-box {
+    padding: 30px 40px;
+  }
+  .section-title-overlay h3 {
+    font-size: 20px;
+  }
   .leadership-content {
     flex-direction: column;
     gap: 30px;
   }
-
   .leader-divider {
     width: 100%;
     height: 1.5px;
     margin: 0;
   }
 
+  .commitment-section {
+    padding: 20px 25px;
+  }
   .shield-icon i,
   .handshake-icon i {
-    font-size: 60px;
+    font-size: 45px;
   }
-
   .commitment-text h3 {
-    font-size: 18px;
+    font-size: 22px;
+    letter-spacing: 1px;
   }
-
   .commitment-text .keywords {
-    font-size: 11px;
-  }
-
-  .commitment-text .motto {
     font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .commitment-text .motto {
+    font-size: 13px;
+    letter-spacing: 1px;
   }
 
   .footer {
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
     align-items: center;
     text-align: center;
-    padding: 20px 40px 40px;
+    padding: 30px 20px;
   }
-
+  .contact-info {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .email-text {
+    align-items: center;
+  }
+  .email-text .label {
+    font-size: 14px;
+  }
+  .email-text .email {
+    font-size: 12px;
+  }
+  .footer-logo {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  .f-logo-text {
+    align-items: center;
+  }
+  .f-name {
+    font-size: 14px;
+  }
+  .f-tag {
+    font-size: 11px;
+  }
   .sub-footer {
     flex-direction: column-reverse;
-    gap: 20px;
+    gap: 12px;
     align-items: center;
-    margin-bottom: 30px;
+    margin: 20px auto 30px;
+  }
+  .copyright {
+    font-size: 11px;
+    text-align: center;
+  }
+  .social-links {
+    gap: 12px;
   }
 }
 
@@ -718,13 +763,68 @@ body {
     width: 92%;
   }
 
-  .leadership-box {
-    padding: 35px 20px;
+  .leadership-section {
+    margin: 40px auto 25px;
   }
-
+  .leadership-box {
+    padding: 25px 15px;
+  }
+  .section-title-overlay {
+    padding: 0 10px;
+  }
+  .section-title-overlay h3 {
+    font-size: 16px;
+  }
   .leader-profile {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 15px;
+  }
+  .leader-avatar {
+    width: 70px;
+    height: 70px;
+  }
+  .leader-avatar i {
+    font-size: 30px;
+  }
+  .leader-info h4 {
+    font-size: 18px;
+  }
+  .leader-info .title {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .leader-info p {
+    font-size: 12px;
+  }
+
+  /* Mobile commitment section */
+  .commitment-section {
+    padding: 25px 15px;
+  }
+  .commitment-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  .shield-icon i,
+  .handshake-icon i {
+    font-size: 45px;
+  }
+  .commitment-text h3 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .commitment-text .keywords {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .commitment-text .motto {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
   }
 }
