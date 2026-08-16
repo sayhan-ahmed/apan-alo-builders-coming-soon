@@ -46,9 +46,7 @@ body {
 }
 
 .banner-logo .logo-img {
-  height: 9vw;
-  min-height: 60px;
-  max-height: 90px;
+  height: clamp(35px, 6vw, 85px);
   width: auto;
   margin-bottom: 5px;
 }
@@ -56,16 +54,10 @@ body {
 .brand-name {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  font-size: 3.5vw;
+  font-size: clamp(12px, 2vw, 24px);
   line-height: 1;
   color: var(--dark-grey);
   text-transform: uppercase;
-}
-
-@media (min-width: 1000px) {
-  .brand-name {
-    font-size: 35px;
-  }
 }
 
 .tagline {
@@ -77,12 +69,12 @@ body {
 
 .tagline .line {
   height: 1.5px;
-  width: 30px;
+  width: clamp(15px, 2vw, 30px);
   background-color: var(--green);
 }
 
 .tag-text {
-  font-size: 14px;
+  font-size: clamp(9px, 0.9vw, 12px);
   font-weight: 600;
   color: var(--text-grey);
   letter-spacing: 0.5px;
@@ -133,7 +125,7 @@ body {
 
 .subtitle-wrap h2 {
   font-family: "Oswald", sans-serif;
-  font-size: 2vw;
+  font-size: clamp(12px, 1.6vw, 22px);
   font-weight: 600;
   color: var(--black);
   letter-spacing: 1px;
@@ -158,6 +150,7 @@ body {
 }
 
 .banner-desc {
+  max-width: 60%;
   font-size: 1.5vw;
   font-weight: 500;
   color: var(--text-grey);
@@ -515,30 +508,63 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 900px) {
-  .services-row-1,
-  .services-row-2 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .service-card {
-    border-right: none;
-  }
-}
-
 @media (max-width: 768px) {
-  .subtitle-wrap h2 {
-    font-size: 3vw;
+  .banner-logo {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding-top: 8px; 
+  }
+  .brand-name br {
+    display: none;
+  }
+  .logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-top: 4px; 
+  }
+  .tagline {
+    justify-content: flex-start;
+    margin-top: 2px;
+  }
+  .tagline .line {
+    display: none;
+  }
+  .tag-text {
+    font-size: 10px; 
   }
   .main-title {
-    font-size: 10vw;
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+  .banner-overlay {
+    width: 85%;
+    padding-top: 0; 
+  }
+  .black-line {
+    width: 30px;
+    height: 2px;
+  }
+  .desc-divider {
+    margin: 3px auto 10px auto;
   }
   .banner-desc {
-    font-size: 2vw;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 10px;
   }
 
   .services-row-1,
   .services-row-2 {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-row-divider {
+    margin: 15px 0;
+    opacity: 0.5;
   }
 
   .leadership-content {
@@ -552,15 +578,28 @@ body {
     margin: 0;
   }
 
-  .commitment-container {
-    flex-direction: column;
-    gap: 20px;
+  .shield-icon i,
+  .handshake-icon i {
+    font-size: 60px;
+  }
+
+  .commitment-text h3 {
+    font-size: 18px;
+  }
+
+  .commitment-text .keywords {
+    font-size: 11px;
+  }
+
+  .commitment-text .motto {
+    font-size: 12px;
   }
 
   .footer {
     flex-direction: column;
     gap: 30px;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     padding: 20px 40px 40px;
   }
 
@@ -573,18 +612,58 @@ body {
 }
 
 @media (max-width: 480px) {
-  .subtitle-wrap h2 {
-    font-size: 4vw;
+  .banner-logo {
+    padding-top: 15px; 
+  }
+  .logo-text-wrapper {
+    padding-top: 6px; 
+  }
+  .tag-text {
+    font-size: 8px;
   }
   .main-title {
-    font-size: 12vw;
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+  .banner-overlay {
+    width: 90%;
+    padding-top: 0; 
+  }
+  .black-line {
+    width: 15px;
+    height: 1px;
+  }
+  .desc-divider {
+    margin: 1px auto 6px auto;
   }
   .banner-desc {
-    font-size: 3vw;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 8px;
+    line-height: 1.25;
   }
 
   .services-row-1,
   .services-row-2 {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .services-section, 
+  .leadership-section, 
+  .commitment-section,
+  .footer,
+  .sub-footer {
+    width: 92%;
+  }
+
+  .leadership-box {
+    padding: 35px 20px;
+  }
+
+  .leader-profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
