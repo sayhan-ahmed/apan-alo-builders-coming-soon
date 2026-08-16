@@ -147,6 +147,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Register elements for scroll reveal
     const animatedElements = [];
     
+    // Highlight Section
+    const highlightBadge = document.querySelector(".highlight-badge-wrap");
+    const highlightContent = document.querySelector(".highlight-content");
+    const highlightDivider = document.querySelector(".highlight-divider-vertical");
+    if (highlightBadge) animatedElements.push(highlightBadge);
+    if (highlightDivider) animatedElements.push(highlightDivider);
+    if (highlightContent) animatedElements.push(highlightContent);
+    
     // Service title
     const serviceTitle = document.querySelector(".services-section .section-title");
     if (serviceTitle) animatedElements.push(serviceTitle);
