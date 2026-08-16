@@ -43,6 +43,9 @@ body {
   align-items: center;
   text-align: center;
   gap: 2px;
+  transition:
+    opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .banner-logo .logo-img {
@@ -95,6 +98,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 2.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .banner-overlay {
@@ -108,6 +112,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition:
+    opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .subtitle-wrap {
@@ -826,5 +833,179 @@ body {
     font-size: 11px;
     letter-spacing: 0.5px;
     line-height: 1.4;
+  }
+}
+
+/* Preloader Layout Styles (Static sizing and centering) */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.preloader-logo {
+  height: 80px;
+  width: auto;
+}
+
+.preloader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(75, 155, 52, 0.1);
+  border-top-color: #4b9b34;
+  border-radius: 50%;
+}
+
+/* Mobile-Only Banner Responsive Styles */
+.mobile-only-banner {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .desktop-only-banner {
+    display: none;
+  }
+
+  .mobile-only-banner {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    overflow: hidden;
+    background-color: var(--light-bg);
+  }
+
+  .mobile-only-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRStO8lUiywTuFSv59Gdcj1q9HYG2i-HbTqvt4yiCGJo5B7v0dgPiax_-tX&s=10");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15; /* Low opacity as requested */
+    z-index: 1;
+  }
+
+  .mobile-banner-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Group everything in the center */
+    align-items: center;
+    gap: 20px; /* Snug gap */
+    padding: 20px 16px;
+    z-index: 2;
+  }
+
+  .mobile-banner-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 3;
+    margin-top: 10px;
+    transition:
+      opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+      transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .mobile-logo-img {
+    height: 65px;
+    width: auto;
+    margin-bottom: 8px;
+  }
+
+  .mobile-brand-name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--dark-grey);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+  }
+
+  .mobile-tagline {
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--text-grey);
+    margin-top: 5px;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 0 10px;
+    text-transform: uppercase;
+  }
+
+  .mobile-banner-card {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    width: 100%;
+    padding: 25px 20px;
+    text-align: center;
+    z-index: 3;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition:
+      opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1),
+      transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .mobile-subtitle-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .mobile-subtitle-wrap h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark-grey);
+    letter-spacing: 1px;
+  }
+
+  .mobile-subtitle-wrap .line {
+    height: 1px;
+    width: 20px;
+    background-color: var(--green);
+  }
+
+  .mobile-main-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .mobile-banner-desc {
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--text-grey);
   }
 }

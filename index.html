@@ -18,19 +18,28 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="preloader-inner">
+        <img src="Logo.png" alt="Apan Alo Builders Logo" class="preloader-logo" />
+        <div class="preloader-spinner"></div>
+      </div>
+    </div>
+
     <main class="page-container">
-      <!-- Banner Section -->
-      <section class="banner-section">
+      <!-- Desktop & Tablet Banner Section -->
+      <section class="banner-section desktop-only-banner">
         <div class="banner-container">
           <!-- Using the provided Banner.png as the background -->
           <img
             src="Banner.png"
             alt="Construction Site Banner"
             class="banner-img"
+            style="transform: scale(1.08);"
           />
 
           <!-- Logo positioned over the sky -->
-          <div class="banner-logo">
+          <div class="banner-logo" style="opacity: 0; transform: translate(-50%, -30px);">
             <img src="Logo.png" alt="Apan Alo Builders Logo" class="logo-img" />
             <div class="logo-text-wrapper">
               <h1 class="brand-name">
@@ -44,7 +53,7 @@
             </div>
           </div>
 
-          <div class="banner-overlay">
+          <div class="banner-overlay" style="opacity: 0; transform: translate(-50%, calc(-50% + 45px));">
             <div class="subtitle-wrap">
               <span class="line black-line"></span>
               <h2>OUR WEBSITE IS</h2>
@@ -57,6 +66,31 @@
             <p class="banner-desc">
               We are currently working on our new website to bring you a
               better experience. Stay tuned!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mobile Banner Section (Premium & Optimized) -->
+      <section class="mobile-only-banner">
+        <div class="mobile-banner-container">
+          <!-- Brand Logo Area -->
+          <div class="mobile-banner-logo" style="opacity: 0; transform: translateY(-25px);">
+            <img src="Logo.png" alt="Apan Alo Builders Logo" class="mobile-logo-img" />
+            <h2 class="mobile-brand-name"><span class="green-text">Apan Alo</span> Builders</h2>
+            <div class="mobile-tagline">From Vision to Reality.</div>
+          </div>
+
+          <!-- Premium Glassmorphic Overlay Card -->
+          <div class="mobile-banner-card" style="opacity: 0; transform: translateY(35px);">
+            <div class="mobile-subtitle-wrap">
+              <span class="line"></span>
+              <h3>OUR WEBSITE IS</h3>
+              <span class="line"></span>
+            </div>
+            <h1 class="mobile-main-title">UNDER<br /><span class="green-text">DEVELOPMENT</span></h1>
+            <p class="mobile-banner-desc">
+              We are working to bring you a premium digital experience. Stay tuned as we build the future!
             </p>
           </div>
         </div>

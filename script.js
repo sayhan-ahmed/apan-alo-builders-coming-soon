@@ -29,43 +29,101 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ----------------------------------------------------
-    // 2. HERO / ENTRANCE ANIMATIONS (Page Load)
+    // 2. PRELOADER ANIMATIONS (JS-based)
     // ----------------------------------------------------
+    const preloader = document.getElementById("preloader");
+    const preloaderSpinner = document.querySelector(".preloader-spinner");
+    const preloaderLogo = document.querySelector(".preloader-logo");
     
-    // Apply styling to logo wrapper
-    const bannerLogo = document.querySelector(".banner-logo");
-    if (bannerLogo) {
-        bannerLogo.style.opacity = "0";
-        bannerLogo.style.transform = "translate(-50%, -30px)";
-        bannerLogo.style.transition = "opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)";
+    let preloaderRotation = 0;
+    let preloaderPulseScale = 1;
+    let preloaderPulseDirection = 1;
+    let isPreloaderActive = true;
+    
+    // Animate spinner and logo pulse using requestAnimationFrame
+    function animatePreloader() {
+        if (!isPreloaderActive) return;
         
-        setTimeout(() => {
+        // Spin the spinner
+        preloaderRotation = (preloaderRotation + 6) % 360;
+        if (preloaderSpinner) {
+            preloaderSpinner.style.transform = `rotate(${preloaderRotation}deg)`;
+        }
+        
+        // Pulse the logo
+        preloaderPulseScale += 0.003 * preloaderPulseDirection;
+        if (preloaderPulseScale >= 1.08) preloaderPulseDirection = -1;
+        if (preloaderPulseScale <= 0.96) preloaderPulseDirection = 1;
+        if (preloaderLogo) {
+            preloaderLogo.style.transform = `scale(${preloaderPulseScale})`;
+        }
+        
+        requestAnimationFrame(animatePreloader);
+    }
+
+    function triggerEntranceAnimations() {
+        // --- Desktop & Tablet Banner Animations ---
+        const bannerLogo = document.querySelector(".banner-logo");
+        if (bannerLogo) {
             bannerLogo.style.opacity = "1";
             bannerLogo.style.transform = "translate(-50%, 0)";
-        }, 100);
-    }
+        }
 
-    // Apply styling to banner image (Subtle zoom-out scale effect)
-    const bannerImg = document.querySelector(".banner-img");
-    if (bannerImg) {
-        bannerImg.style.transform = "scale(1.08)";
-        bannerImg.style.transition = "transform 2.5s cubic-bezier(0.25, 1, 0.5, 1)";
-        setTimeout(() => {
+        const bannerImg = document.querySelector(".banner-img");
+        if (bannerImg) {
             bannerImg.style.transform = "scale(1)";
-        }, 100);
-    }
+        }
 
-    // Apply styling to banner overlay text elements
-    const bannerOverlay = document.querySelector(".banner-overlay");
-    if (bannerOverlay) {
-        bannerOverlay.style.opacity = "0";
-        bannerOverlay.style.transform = "translate(-50%, calc(-50% + 45px))";
-        bannerOverlay.style.transition = "opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1), transform 1.5s cubic-bezier(0.25, 1, 0.5, 1)";
-        
-        setTimeout(() => {
+        const bannerOverlay = document.querySelector(".banner-overlay");
+        if (bannerOverlay) {
             bannerOverlay.style.opacity = "1";
             bannerOverlay.style.transform = "translate(-50%, -50%)";
-        }, 300);
+        }
+
+        // --- Mobile Only Banner Animations ---
+        const mobileLogo = document.querySelector(".mobile-banner-logo");
+        if (mobileLogo) {
+            mobileLogo.style.opacity = "1";
+            mobileLogo.style.transform = "translateY(0)";
+        }
+
+        const mobileCard = document.querySelector(".mobile-banner-card");
+        if (mobileCard) {
+            mobileCard.style.opacity = "1";
+            mobileCard.style.transform = "translateY(0)";
+        }
+    }
+    
+    if (preloader) {
+        animatePreloader();
+        
+        // Hide loader when page is fully loaded
+        window.addEventListener("load", () => {
+            // Speed up preloader fade-out and trigger entrance animations immediately
+            preloader.style.transition = "opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1)";
+            if (preloaderLogo) {
+                preloaderLogo.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease";
+                preloaderLogo.style.transform = "scale(0.8)";
+                preloaderLogo.style.opacity = "0";
+            }
+            if (preloaderSpinner) {
+                preloaderSpinner.style.transition = "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease";
+                preloaderSpinner.style.transform = "scale(0.8)";
+                preloaderSpinner.style.opacity = "0";
+            }
+            
+            preloader.style.opacity = "0";
+            
+            // Trigger page entrance animations immediately for seamless cross-fade
+            triggerEntranceAnimations();
+            
+            setTimeout(() => {
+                isPreloaderActive = false;
+                preloader.style.display = "none";
+            }, 400);
+        });
+    } else {
+        triggerEntranceAnimations();
     }
 
     // ----------------------------------------------------
