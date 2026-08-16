@@ -513,7 +513,7 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 12px;
-    padding-top: 8px; 
+    padding-top: 8px;
   }
   .brand-name br {
     display: none;
@@ -523,7 +523,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    padding-top: 4px; 
+    padding-top: 4px;
   }
   .tagline {
     justify-content: flex-start;
@@ -533,7 +533,7 @@ body {
     display: none;
   }
   .tag-text {
-    font-size: 10px; 
+    font-size: 10px;
   }
   .main-title {
     font-size: 38px;
@@ -541,7 +541,7 @@ body {
   }
   .banner-overlay {
     width: 85%;
-    padding-top: 0; 
+    padding-top: 0;
   }
   .black-line {
     width: 30px;
@@ -691,10 +691,10 @@ body {
 
 @media (max-width: 480px) {
   .banner-logo {
-    padding-top: 15px; 
+    padding-top: 15px;
   }
   .logo-text-wrapper {
-    padding-top: 6px; 
+    padding-top: 6px;
   }
   .tag-text {
     font-size: 8px;
@@ -705,7 +705,7 @@ body {
   }
   .banner-overlay {
     width: 90%;
-    padding-top: 0; 
+    padding-top: 0;
   }
   .black-line {
     width: 15px;
@@ -754,9 +754,9 @@ body {
     border-right: none !important;
     border-bottom: none !important;
   }
-  
-  .services-section, 
-  .leadership-section, 
+
+  .services-section,
+  .leadership-section,
   .commitment-section,
   .footer,
   .sub-footer {

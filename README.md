@@ -1,6 +1,6 @@
 # Client Website — Coming Soon Page
 
-This repository contains the **Coming Soon page created for the official website of [Client Name]**.
+This repository contains the **Coming Soon page created for the official website of Apan Alo Builders**.
 
 It is designed to be displayed on the client's domain **while the main website is being developed**, providing visitors with a professional introduction until the complete website is available.
 
