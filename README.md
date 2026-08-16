@@ -1,30 +1,21 @@
-# Apan Alo Builders - Coming Soon
+# Client Website — Coming Soon Page
 
-A modern, elegant "Coming Soon" landing page for Apan Alo Builders. 
+This repository contains the **Coming Soon page created for the official website of [Client Name]**.
 
-## Features
+It is designed to be displayed on the client's domain **while the main website is being developed**, providing visitors with a professional introduction until the complete website is available.
 
-- **Glassmorphism Design**: A sleek, premium glass card UI on a dark gradient background.
-- **Dynamic Countdown**: A live JavaScript countdown timer to launch.
-- **Modern Typography**: Utilizes the 'Inter' font from Google Fonts for a clean look.
-- **Responsive**: Fully responsive design that looks great on mobile and desktop devices.
+## 🌐 Client Website
 
-## Technologies Used
+Visit the client's official website:
 
-- HTML5
-- CSS3 (Vanilla CSS, Glassmorphism)
-- Vanilla JavaScript
+**https://www.apanalobuilders.com**
 
-## Setup & Usage
+## 📌 About This Project
 
-To view this project locally, simply clone the repository and open the `index.html` file in your preferred web browser.
+This is the **temporary web experience for the client's official website**, created specifically for the development phase of the main website.
 
-```bash
-git clone https://github.com/sayhan-ahmed/apan-alo-builders-coming-soon.git
-cd apan-alo-builders-coming-soon
-```
-Open `index.html` in Chrome, Safari, Firefox, or Edge.
+The final website is being developed as a separate project and will replace this page on the client's domain.
 
-## License
+---
 
-This project is open-source and available under the MIT License.
+**Developed by Sayhan Ahmed**
